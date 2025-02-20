@@ -34,4 +34,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: copies to docs
-        run: cp ./dist ./docs
+        run: cp -r ./dist ./docs
