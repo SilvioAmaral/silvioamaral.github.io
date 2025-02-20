@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+// import * as greatPost from './posts/post-1.md';
+const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+---
+<Layout title="Blog">
+    <!-- <p>{greatPost.frontmatter.title}</p> -->
+    <!-- <p>Written by: {greatPost.frontmatter.author}</p> -->
+    
+    <section id="about" class="about section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Professional blog</h2>
+          <ul>
+            {posts.map((post: any) => 
+              <li>
+                  <p><a href={post.url}>{post.frontmatter.title}</a></p>
+              </li>
+              )}
+          </ul>
+        </div><!-- End Section Title -->
+    
+       
+    </section>
+</Layout>
+
