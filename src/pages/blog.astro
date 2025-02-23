@@ -12,13 +12,11 @@ const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
           <h2>Professional blog</h2>
-          <ul>
+          <!-- <ul> -->
             {posts.map((post: any) => 
-              <li>
-                  <p><a href={post.url}>{post.frontmatter.title}</a></p>
-              </li>
-              )}
-          </ul>
+                <h4><a href={post.url}>{post.frontmatter.title}</a></h4>
+            )}
+          <!-- </ul> -->
         </div><!-- End Section Title -->
     
        
